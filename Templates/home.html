@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='/app.css') }}">
+</head>
+<body>
+<h1>Boggle</h1>
+<button id="startButton">Start</button>
+<table id="board" style="display: none;">
+<tbody>
+{%for b in board%}
+    <tr>
+        {%for c in b%}
+        <td>{{c}}</td>
+        {%endfor%}
+    </tr>
+{%endfor%}
+</tbody>
+</table>
+
+<div id="score" style="display: none;">
+Score: <div class="score">0</div>
+Time: <div class="timer">60</div>
+</div>
+
+<form class="guess-word" id="guessBar" style="display: none;" method="POST">
+<label for="guess">Enter your guess here: </label>
+<input name="guess" class="w">
+<button>Submit</button>
+</form>
+<div class="wordList"></div>
+
+
+    
+<script src="https://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

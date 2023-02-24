@@ -1,0 +1,10 @@
+#board {
+  text-align: center;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+
+#board td {
+    border: solid 1px rgb(0, 0, 0);
+    padding: 1em;
+  }
